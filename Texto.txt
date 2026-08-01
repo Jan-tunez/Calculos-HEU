@@ -1,0 +1,39 @@
+&control
+     CALCULATION = 'relax'
+     restart_mode='from_scratch',
+     prefix='Naka',
+     tprnfor = .TRUE.,
+     nstep=500,
+     outdir='/tmpu/vitalii_g/vitalii/HEU/tmp',
+ 
+/
+  &system
+    ibrav = 14,
+     celldm(1) = 33.1136685d0,
+     celldm(2) =  1.0069052d0,
+     celldm(3) =  0.4223592d0,
+     celldm(4) =  0.0d0,
+     celldm(5) = -0.4400019d0,
+     celldm(6) =  0.0d0,
+     nat = 108,
+     ntyp = 4,
+     ecutwfc=45.0,
+     ecutrho=360.0,
+     occupations=fixed
+/
+  &electrons
+     electron_maxstep=400,
+     mixing_mode = 'plain',
+     mixing_beta = 0.4,
+/
+ &IONS
+    ion_dynamics = 'bfgs',
+/
+&cell
+/
+ ATOMIC_SPECIES
+  O   15.999  O.pbesol-n-rrkjus_psl.0.1.UPF
+  Na  22.989  Na.pbesol-spn-rrkjus_psl.0.2.UPF
+  Al  26.981  Al.pbesol-n-rrkjus_psl.0.1.UPF
+  Si  28.085  Si.pbesol-n-rrkjus_psl.0.1.UPF
+ ATOMIC_POSITIONS crystal
